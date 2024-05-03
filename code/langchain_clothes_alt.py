@@ -26,7 +26,7 @@ from langchain.schema import (
 )
 from langchain_openai import ChatOpenAI
 
-chat_model = ChatOpenAI(temperature =0.6,max_tokens=500, model= "gpt-3.5-turbo-0125", openai_api_key="sk-proj-PAXluc3navbENuKiJV1YT3BlbkFJfyemsP8VABYSxQqDGGV7")
+chat_model = ChatOpenAI(temperature =0.6,max_tokens=500, model= "gpt-3.5-turbo-0125", openai_api_key=openai_api_key)
 '''
 messages = [
     SystemMessage(content="You are an expert data scientist"),
@@ -37,7 +37,7 @@ print(response.content, end='\n')'''
 
 #### test image model #####
 
-image_model = ChatOpenAI(temperature=0.9, model= "gpt-4-turbo-2024-04-09", max_tokens=500, openai_api_key="sk-proj-PAXluc3navbENuKiJV1YT3BlbkFJfyemsP8VABYSxQqDGGV7")
+image_model = ChatOpenAI(temperature=0.9, model= "gpt-4-turbo-2024-04-09", max_tokens=500, openai_api_key=openai_api_key)
 
 '''messages = [
     SystemMessage(content="You are an expert data scientist"),
@@ -76,7 +76,7 @@ print(response.content, end='\n')'''
 
 import base64
 import os
-os.environ['OPENAI_API_KEY'] = "sk-proj-PAXluc3navbENuKiJV1YT3BlbkFJfyemsP8VABYSxQqDGGV7"
+os.environ['OPENAI_API_KEY'] = openai_api_key
 from langchain_community.utilities.dalle_image_generator import DallEAPIWrapper
 
 
