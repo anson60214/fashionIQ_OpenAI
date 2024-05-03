@@ -1,14 +1,17 @@
 #################################################################################
 
 from langchain_openai import OpenAI
-
+from dotenv import dotenv_values
 # import schema for chat messages and ChatOpenAI in order to query chatmodels GPT-3.5-turbo or GPT-4
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 from langchain.chains import SequentialChain
+
 from langchain_community.document_loaders.image import UnstructuredImageLoader
 
-llm = OpenAI(temperature = 0.6, openai_api_key = "sk-proj-PAXluc3navbENuKiJV1YT3BlbkFJfyemsP8VABYSxQqDGGV7")
+
+openai_api_key = dotenv_values(".env")["OPENAI_API_KEY"]
+llm = OpenAI(temperature = 0.6, openai_api_key = openai_api_key)
 #image_model = ChatOpenAI(temperature=0.9, model= "gpt-4-turbo-2024-04-09", openai_api_key="sk-proj-PAXluc3navbENuKiJV1YT3BlbkFJfyemsP8VABYSxQqDGGV7")
 
 

@@ -6,6 +6,7 @@ from tensorflow.keras.applications.resnet50 import preprocess_input
 from pinecone import Pinecone
 import pandas as pd
 import requests
+from dotenv import dotenv_values
 
 def get_image_embedding(image_path,model):
     # Load and preprocess the image
@@ -19,7 +20,7 @@ def get_image_embedding(image_path,model):
     return embedding.flatten()
 
 def query_cloth(input_img: str, brand_type: str, model ):
-    pinecone_api_key = "7cde47d4-3775-446e-9bf5-eb0b5c024477"
+    pinecone_api_key= dotenv_values(".env")["pinecone_api_key"]
 
     pc = Pinecone(api_key=pinecone_api_key)
     index = pc.Index('imagevector')
