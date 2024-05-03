@@ -12,7 +12,7 @@ from langchain_community.document_loaders.image import UnstructuredImageLoader
 
 openai_api_key = dotenv_values(".env")["OPENAI_API_KEY"]
 llm = OpenAI(temperature = 0.6, openai_api_key = openai_api_key)
-#image_model = ChatOpenAI(temperature=0.9, model= "gpt-4-turbo-2024-04-09", openai_api_key="sk-proj-PAXluc3navbENuKiJV1YT3BlbkFJfyemsP8VABYSxQqDGGV7")
+#image_model = ChatOpenAI(temperature=0.9, model= "gpt-4-turbo-2024-04-09", openai_api_key=openai_api_key)
 
 
 ###### test for openai base#####
